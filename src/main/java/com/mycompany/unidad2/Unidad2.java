@@ -20,11 +20,24 @@ public class Unidad2 {
         mauricio.nuevoTelefono("074078385",2,"Casa","Etapa",1);
         mauricio.nuevoTelefono("074135250",1287,"Fijo IP","Etapa",2);
         
-        System.out.println(mauricio.toString());
+        //System.out.println(mauricio.toString());
+        
+        //var receta = new Receta ("Paracetamol canino",28,"Cada 8 horas");
         
         var mcqueen = new Mascota ("Mcqueen","Perro","Grandanes",5.30,mauricio); 
+          
+        var atencion = new Atencion (LocalDate.now(),"Dra.Polo",30,2);
         
-        //var atencion1 = new Atencion (LocalDate.now(),"Dra.Polo",25,mcqueen,5);
+        atencion.nuevaReceta("Paracetamol", 5, "Cada 16 horas" , 0);
+        atencion.nuevaReceta("Pro-Can", 12, "Cada 12 horas" , 1);
+        
+        mauricio.mostrarInfo();
+        
+        
+        
+       
+        
+        
     }
     
    

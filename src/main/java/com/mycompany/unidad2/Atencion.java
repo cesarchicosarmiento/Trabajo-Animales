@@ -11,31 +11,27 @@ import java.time.LocalDate;
  * @author Usuario R
  */
 public class Atencion {
+
     private LocalDate fecha;
     private String veterinario;
     private double costo;
-    private Mascota mascota;
+    //private Mascota mascota;
     private Receta[] recetaList;
     private int numRecetas;
-    
-   
-    
-    
-    public Atencion(LocalDate fecha, String veterinario, double costo, Mascota mascota, int numRecetas) {
+
+    public Atencion(LocalDate fecha, String veterinario, double costo,int numRecetas) {
         this.fecha = fecha;
         this.veterinario = veterinario;
         this.costo = costo;
-        this.mascota = mascota;
+        //this.mascota = mascota;
         recetaList = new Receta[numRecetas];
     }
 
-    public void nuevaReceta(String medicamento, int cantidad, String indicacion,int posicion) {
+    public void nuevaReceta(String medicamento, int cantidad, String indicacion, int posicion) {
         var receta = new Receta(medicamento, cantidad, indicacion);
         this.recetaList[posicion] = receta;
     }
-    
-    
-    
+
     public LocalDate getFecha() {
         return fecha;
     }
@@ -59,7 +55,7 @@ public class Atencion {
     public void setCosto(double costo) {
         this.costo = costo;
     }
-
+/*
     public Mascota getMascota() {
         return mascota;
     }
@@ -67,16 +63,17 @@ public class Atencion {
     public void setMascota(Mascota mascota) {
         this.mascota = mascota;
     }
-    
-    public void mostrarInfo(){
+*/
+    public void mostrarInfo() {
         System.out.println("La receta consto de lo siguiente: ");
-        //fo
+        for (int x = 0; x < numRecetas; x++) {
+
+            System.out.println(recetaList[x]);
+
+        }
     }
-    
-    public void mostrarInfo(){
-        System.out.println("");
-    }
-/*
+
+    /*
     @Override
     public String toString() {
         return "Atencion{" + "fecha=" + fecha.toString() + ", veterinario=" 

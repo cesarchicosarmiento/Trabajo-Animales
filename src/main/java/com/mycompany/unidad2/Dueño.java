@@ -14,6 +14,8 @@ public class Dueño {
     private String nombre;
     private int cantidadTelefonos;
     private Telefono[] telefonoList;
+    private Atencion atencion;
+    
 
     public Dueño(String cedula, String nombre, int cantidadTelefonos) {
         this.cedula = cedula;
@@ -58,19 +60,20 @@ public class Dueño {
     public void setTelefonoList(Telefono[] telefonoList) {
         this.telefonoList = telefonoList;
     }
-    public void mostrarInfo(){
+
+    public void mostrarInfo() {
         System.out.println("Due\u00f1o{" + "\ncedula = " + cedula + "\nNombre = " + nombre
-                    + "\ncantidadTelefonos=" + cantidadTelefonos
-                    + "\ntelefonoList = ");
-        for(int i = 0; i<cantidadTelefonos; i++){
+                + "\ncantidadTelefonos=" + cantidadTelefonos
+                + "\ntelefonoList = ");
+        for (int i = 0; i < cantidadTelefonos; i++) {
             System.out.println(telefonoList[i].toString());
         }
         
+        atencion.mostrarInfo();
         
     }
-    
-    
-/*
+
+    /*
     @Override
     public String[cantidadTelefonos] toString() {
         String [] retorno = new String[cantidadTelefonos];
@@ -85,5 +88,5 @@ public class Dueño {
         return retorno;
           
      }
-*/
+     */
 }
