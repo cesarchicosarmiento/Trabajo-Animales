@@ -3,8 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
 
-package com.mycompany.unidad2;
+package com.mycompany.unidad2.vista;
 
+import com.mycompany.unidad2.modelo.Atencion;
+import com.mycompany.unidad2.modelo.Dueño;
+import com.mycompany.unidad2.modelo.Mascota;
 import java.time.LocalDate;
 
 /**
@@ -33,6 +36,7 @@ public class Unidad2 {
         
         mauricio.mostrarInfo();
         
+        System.out.println(atencion.toString());
         
         
        

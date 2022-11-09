@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.unidad2;
+package com.mycompany.unidad2.modelo;
 
 import java.time.LocalDate;
 
@@ -19,7 +19,7 @@ public class Atencion {
     private Receta[] recetaList;
     private int numRecetas;
 
-    public Atencion(LocalDate fecha, String veterinario, double costo,int numRecetas) {
+    public Atencion(LocalDate fecha, String veterinario, double costo, int numRecetas) {
         this.fecha = fecha;
         this.veterinario = veterinario;
         this.costo = costo;
@@ -55,28 +55,29 @@ public class Atencion {
     public void setCosto(double costo) {
         this.costo = costo;
     }
-/*
-    public Mascota getMascota() {
-        return mascota;
-    }
 
-    public void setMascota(Mascota mascota) {
-        this.mascota = mascota;
-    }
-*/
     public void mostrarInfo() {
         System.out.println("La receta consto de lo siguiente: ");
+
+        System.out.println("El num recetas" + numRecetas);
         for (int x = 0; x < numRecetas; x++) {
 
-            System.out.println(recetaList[x]);
+            System.out.println(recetaList[x].toString());
 
         }
+
     }
 
-    /*
     @Override
     public String toString() {
-        return "Atencion{" + "fecha=" + fecha.toString() + ", veterinario=" 
-                + veterinario + ", costo=" + costo + ", mascota=" + mascota + '}';
-    }*/
+        var retorno = "Atencion{" + "fecha=" + fecha.toString() + ", veterinario="
+                + veterinario + ", costo=" + costo + '}';
+
+        for (var receta : this.recetaList) {
+            retorno += receta.toString() + "\n";
+        }
+
+        return retorno;
+
+    }
 }

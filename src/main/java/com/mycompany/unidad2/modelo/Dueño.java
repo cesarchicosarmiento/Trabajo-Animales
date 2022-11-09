@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.unidad2;
+package com.mycompany.unidad2.modelo;
 
 /**
  *
@@ -15,7 +15,6 @@ public class Dueño {
     private int cantidadTelefonos;
     private Telefono[] telefonoList;
     private Atencion atencion;
-    
 
     public Dueño(String cedula, String nombre, int cantidadTelefonos) {
         this.cedula = cedula;
@@ -68,25 +67,9 @@ public class Dueño {
         for (int i = 0; i < cantidadTelefonos; i++) {
             System.out.println(telefonoList[i].toString());
         }
-        
-        atencion.mostrarInfo();
-        
+       
+
     }
 
-    /*
-    @Override
-    public String[cantidadTelefonos] toString() {
-        String [] retorno = new String[cantidadTelefonos];
-        
-        for (int i = 0; i < cantidadTelefonos; i++) {
-
-            retorno[i] = "Due\u00f1o{" + "cedula=" + cedula + ", nombre=" + nombre
-                    + ", cantidadTelefonos=" + cantidadTelefonos
-                    + ", telefonoList=" + telefonoList[i].toString() + '}';
-
-        }
-        return retorno;
-          
-     }
-     */
+    
 }
