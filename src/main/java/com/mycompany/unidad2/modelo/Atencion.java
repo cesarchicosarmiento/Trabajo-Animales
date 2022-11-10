@@ -5,6 +5,7 @@
 package com.mycompany.unidad2.modelo;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,21 +16,22 @@ public class Atencion {
     private LocalDate fecha;
     private String veterinario;
     private double costo;
-    //private Mascota mascota;
-    private Receta[] recetaList;
-    private int numRecetas;
+    private ArrayList<Receta> recetaList;
 
-    public Atencion(LocalDate fecha, String veterinario, double costo, int numRecetas) {
+    public Atencion(LocalDate fecha, String veterinario, double costo) {
         this.fecha = fecha;
         this.veterinario = veterinario;
         this.costo = costo;
-        //this.mascota = mascota;
-        recetaList = new Receta[numRecetas];
+        this.recetaList = new ArrayList<>();
     }
 
-    public void nuevaReceta(String medicamento, int cantidad, String indicacion, int posicion) {
+    public Atencion() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void nuevaReceta(String medicamento, int cantidad, String indicacion) {
         var receta = new Receta(medicamento, cantidad, indicacion);
-        this.recetaList[posicion] = receta;
+        this.recetaList.add(receta);
     }
 
     public LocalDate getFecha() {
@@ -56,28 +58,23 @@ public class Atencion {
         this.costo = costo;
     }
 
-    public void mostrarInfo() {
-        System.out.println("La receta consto de lo siguiente: ");
+    public ArrayList<Receta> getRecetaList() {
+        return recetaList;
+    }
 
-        System.out.println("El num recetas" + numRecetas);
-        for (int x = 0; x < numRecetas; x++) {
-
-            System.out.println(recetaList[x].toString());
-
-        }
-
+    public void setRecetaList(ArrayList<Receta> recetaList) {
+        this.recetaList = recetaList;
     }
 
     @Override
     public String toString() {
-        var retorno = "Atencion{" + "fecha=" + fecha.toString() + ", veterinario="
-                + veterinario + ", costo=" + costo + '}';
-
+        var retorno = "Atencion{" + "fecha=" + fecha + ", veterinario=" +
+                veterinario + ", costo=" + costo + ", recetaList=" + recetaList + '}';
         for (var receta : this.recetaList) {
             retorno += receta.toString() + "\n";
         }
-
         return retorno;
 
     }
+
 }

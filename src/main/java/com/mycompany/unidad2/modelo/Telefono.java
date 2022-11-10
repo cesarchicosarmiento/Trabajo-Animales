@@ -60,5 +60,4 @@ public class Telefono {
                 + extension + ", tipoTelefono=" + tipoTelefono
                 + ", operadora=" + operadora + '}';
     }
-
 }

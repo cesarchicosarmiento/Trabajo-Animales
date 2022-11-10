@@ -4,6 +4,8 @@
  */
 package com.mycompany.unidad2.modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Usuario R
@@ -12,20 +14,17 @@ public class Dueño {
 
     private String cedula;
     private String nombre;
-    private int cantidadTelefonos;
-    private Telefono[] telefonoList;
-    private Atencion atencion;
+    private ArrayList<Telefono> telefonoList;
 
-    public Dueño(String cedula, String nombre, int cantidadTelefonos) {
+    public Dueño(String cedula, String nombre) {
         this.cedula = cedula;
         this.nombre = nombre;
-        this.cantidadTelefonos = cantidadTelefonos;
-        this.telefonoList = new Telefono[this.cantidadTelefonos];
+        this.telefonoList = new ArrayList<>();
     }
 
-    public void nuevoTelefono(String numero, int extension, String tipoTelefono, String operadora, int posicion) {
-        var telefono = new Telefono(numero, extension, tipoTelefono, operadora);
-        this.telefonoList[posicion] = telefono;
+    public void nuevoTelefono(String n, int e, String tT, String op) {
+        var telefono = new Telefono(n, e, tT, op);
+        this.telefonoList.add(telefono);
     }
 
     public String getCedula() {
@@ -44,32 +43,28 @@ public class Dueño {
         this.nombre = nombre;
     }
 
-    public int getCantidadTelefonos() {
-        return cantidadTelefonos;
-    }
-
-    public void setCantidadTelefonos(int cantidadTelefonos) {
-        this.cantidadTelefonos = cantidadTelefonos;
-    }
-
-    public Telefono[] getTelefonoList() {
+    public ArrayList<Telefono> getTelefonoList() {
         return telefonoList;
     }
 
-    public void setTelefonoList(Telefono[] telefonoList) {
+    public void setTelefonoList(ArrayList<Telefono> telefonoList) {
         this.telefonoList = telefonoList;
     }
 
-    public void mostrarInfo() {
-        System.out.println("Due\u00f1o{" + "\ncedula = " + cedula + "\nNombre = " + nombre
-                + "\ncantidadTelefonos=" + cantidadTelefonos
-                + "\ntelefonoList = ");
-        for (int i = 0; i < cantidadTelefonos; i++) {
-            System.out.println(telefonoList[i].toString());
-        }
-       
+    @Override
+    public String toString() {
+        var retorno = "Dueño{" + "cedula=" + cedula + ", nombre="
+                + nombre + "\n";
+        /*
+        for(var telefono:this.telefonoList){
+            retorno+=telefono.toString()+"\n";
+        }*/
 
+        for (var i = 0; i < this.telefonoList.size(); i++) {
+            retorno += this.telefonoList.get(i) + "\n";
+        }
+
+        return retorno;
     }
 
-    
 }

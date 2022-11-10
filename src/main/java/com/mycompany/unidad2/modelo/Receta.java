@@ -9,7 +9,7 @@ package com.mycompany.unidad2.modelo;
  * @author Usuario R
  */
 public class Receta {
-    private String medicamento;
+     private String medicamento;
     private int cantidad;
     private String indicacion;
 
@@ -42,12 +42,11 @@ public class Receta {
     public void setIndicacion(String indicacion) {
         this.indicacion = indicacion;
     }
-    
-    
+
     @Override
     public String toString() {
-        return "Receta{" + "medicamento=" + medicamento + ", cantidad=" + cantidad + ", indicacion=" + indicacion + '}';
+        return "Receta{" + "medicamento=" + medicamento + ", cantidad=" 
+                + cantidad + ", indicacion=" + indicacion + '}';
     }
-    
     
 }
